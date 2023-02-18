@@ -35,11 +35,11 @@ public class crawlingClass {
 		
 			
 		
-	JDBCTemplate jt = new JDBCTemplate();
-	int count = jt.insertData(rank, title, percent, egg);
-	if(count > 0) {
-		System.out.println("추가 완료");
-	}
+//	JDBCTemplate jt = new JDBCTemplate();
+//	int count = jt.insertData(rank, title, percent, egg);
+//	if(count > 0) {
+//		System.out.println("추가 완료");
+//	}
 	
 	
 	
