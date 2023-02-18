@@ -1,11 +1,23 @@
-package semi.movie.vo;
+package movie.vo;
 
-public class movieVo {
-
+public class movieVO {
 	private String rank;
 	private String title;
 	private String percent;
 	private String egg;
+	
+	
+	
+	
+	public movieVO(String rank, String title, String percent, String egg) {
+		this.rank = rank;
+		this.title = title;
+		this.percent = percent;
+		this.egg = egg;
+	}
+	
+
+
 	public String getRank() {
 		return rank;
 	}
@@ -34,7 +46,4 @@ public class movieVo {
 	public String toString() {
 		return "movieVo [rank=" + rank + ", title=" + title + ", percent=" + percent + ", egg=" + egg + "]";
 	}
-	
-	
-
 }
