@@ -1,19 +1,34 @@
 package movie.vo;
 
 public class movieVO {
+
 	private String rank;
 	private String title;
 	private String percent;
 	private String egg;
+	private String imgurl;
 	
 	
 	
 	
-	public movieVO(String rank, String title, String percent, String egg) {
+	public String getImgurl() {
+		return imgurl;
+	}
+
+
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
+
+
+
+	public movieVO(String rank, String title, String percent, String egg, String imgurl) {
 		this.rank = rank;
 		this.title = title;
 		this.percent = percent;
 		this.egg = egg;
+		this.imgurl = imgurl;
 	}
 	
 
@@ -44,6 +59,10 @@ public class movieVO {
 	}
 	@Override
 	public String toString() {
-		return "movieVo [rank=" + rank + ", title=" + title + ", percent=" + percent + ", egg=" + egg + "]";
+		return "movieVo [rank=" + rank + ", title=" + title + ", percent=" + percent + ", egg=" + egg + ", imgurl="
+				+ imgurl + "]";
 	}
+	
+	
+
 }

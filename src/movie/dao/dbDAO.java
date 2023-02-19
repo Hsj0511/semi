@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import movie.vo.movieVO;
+import movie.vo.movieVo;
 
 public class dbDAO {
 
@@ -30,12 +31,13 @@ public class dbDAO {
 				System.out.println("접속성공!!!!!!");
 			}
 			for(int j= 0; j <ML.size(); j ++) {
-				sql=" INSERT INTO MOVIEINFO(RANK, TITLE, PERCENT, EGG) VALUES (?, ?, ?, ? ) ";
+				sql=" INSERT INTO MOVIEINFO(RANK, TITLE, PERCENT, EGG, IMGURL) VALUES (?, ?, ?, ? ,?) ";
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, ML.get(j).getRank());
 				pstmt.setString(2, ML.get(j).getTitle());
 				pstmt.setString(3, ML.get(j).getPercent());
 				pstmt.setString(4, ML.get(j).getEgg());
+				pstmt.setString(5, ML.get(j).getImgurl());
 				pstmt.executeUpdate();
 				}
 			 System.out.println("디비 저장 성공!!!!!");
@@ -55,7 +57,7 @@ public class dbDAO {
 		Connection conn;
 		String sql;
 		
-		String RT, TT, PT, ET;
+		String RT, TT, PT, ET, IT;
 		
 		try {
 			Class.forName(driver);
@@ -71,7 +73,8 @@ public class dbDAO {
 				TT = rs.getString("TITLE");
 				PT = rs.getString("PERCENT");
 				ET = rs.getString("EGG");
-				ML.add(new movieVO(RT, TT, PT, ET));
+				IT = rs.getString("IMGURL");
+				ML.add(new movieVO(RT, TT, PT, ET, IT));
 			}
 				System.out.println("다운 성공!!");
 				
