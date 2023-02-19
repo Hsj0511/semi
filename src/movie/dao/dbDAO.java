@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import movie.vo.movieVO;
-import movie.vo.movieVo;
 
 public class dbDAO {
 

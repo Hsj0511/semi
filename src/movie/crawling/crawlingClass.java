@@ -12,7 +12,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import movie.vo.movieVO;
-import movie.vo.movieVo;
+
 
 
 public class crawlingClass {
@@ -59,7 +59,7 @@ public class crawlingClass {
 				}
 		}
 			System.out.println("크롤링 성공!");
-			System.out.println(" 디비 저장 데이터 :"+  ML);
+		//	System.out.println(" 디비 저장 데이터 :"+  ML);
 
 	}
 }
