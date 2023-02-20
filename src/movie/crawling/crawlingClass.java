@@ -11,13 +11,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import movie.vo.movieVO;
+import movie.vo.MovieVO;
 
 
 
 public class crawlingClass {
 
-	public static void Crawling(ArrayList<movieVO> ML) {
+	public static void Crawling(ArrayList<MovieVO> ML) {
 		
 		String url = "http://www.cgv.co.kr/movies/?lt=1&ot=1";
 		
@@ -55,7 +55,7 @@ public class crawlingClass {
 					String imgurl = path+savedName;
 					  
 
-			     	 ML.add(new movieVO(rank, title, percent, egg, imgurl));
+			     	 ML.add(new MovieVO(rank, title, percent, egg, imgurl));
 				}
 		}
 			System.out.println("크롤링 성공!");

@@ -5,20 +5,48 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
-import movie.vo.movieVO;
+import movie.vo.MovieVO;
 
-public class dbDAO {
+public class DbDAO {
+	
+	
+public static Connection getConnection() {
+		
+		Connection conn = null;
 
-	public static void UploadToDB(ArrayList<movieVO> ML) {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","MOVIE","MOVIE");
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+	    	} catch (ClassNotFoundException e) {
+ 			e.printStackTrace();
+		   }
+		
+		
+		if(conn != null) System.out.println("DB연결 성공");
+		else System.out.println("DB연결 실패");
+		return conn;
+	}
+
+
+
+
+
+
+
+	public static void UploadToDB(ArrayList<MovieVO> ML) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 		String user = "MOVIE";
 		String pw = "MOVIE";
 		Connection conn;
 		String sql;
-		movieVO result = null;
+		MovieVO result = null;
 		ResultSet rs = null;
 		
 	
@@ -48,7 +76,7 @@ public class dbDAO {
 	
 		}
 	
-	public static void DownloadToDB(ArrayList<movieVO> ML) {
+	public static void DownloadToDB(ArrayList<MovieVO> ML) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 		String user = "MOVIE";
@@ -73,7 +101,7 @@ public class dbDAO {
 				PT = rs.getString("PERCENT");
 				ET = rs.getString("EGG");
 				IT = rs.getString("IMGURL");
-				ML.add(new movieVO(RT, TT, PT, ET, IT));
+				ML.add(new MovieVO(RT, TT, PT, ET, IT));
 			}
 				System.out.println("다운 성공!!");
 				
@@ -86,4 +114,55 @@ public class dbDAO {
 		}
 		
 	}
+	
+	public static void close(Statement stmt) {
+		try {
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void close(Connection conn) {
+		try {
+			if(conn != null && !conn.isClosed()) {
+			conn.close(); 
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void close(ResultSet rs) {
+		try {
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//commit
+	public static void commit(Connection conn) {
+		try {
+			if(conn != null && !conn.isClosed()) {
+				conn.commit();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//rollback
+	public static void rollback(Connection conn) {
+		try {
+			if(conn != null && !conn.isClosed()) {
+				conn.rollback();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

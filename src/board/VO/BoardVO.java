@@ -1,8 +1,8 @@
-package board.vo;
+package board.VO;
 
 import java.sql.Date;
 
-public class boardDAO {
+public class BoardVO {
 /**
  * board_num number,
 board_writer varchar2(15),
@@ -44,11 +44,5 @@ board_date date
 		return "boardDAO [boardNum=" + boardNum + ", boardWriter=" + boardWriter + ", boardContent=" + boardContent
 				+ ", boardDate=" + boardDate + "]";
 	}
-public boardDAO(int boardNum, String boardWriter, String boardContent, Date boardDate) {
-	super();
-	this.boardNum = boardNum;
-	this.boardWriter = boardWriter;
-	this.boardContent = boardContent;
-	this.boardDate = boardDate;
-}
+
 }

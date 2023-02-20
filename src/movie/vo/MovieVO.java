@@ -1,6 +1,6 @@
 package movie.vo;
 
-public class movieVO {
+public class MovieVO {
 
 	private String rank;
 	private String title;
@@ -23,7 +23,7 @@ public class movieVO {
 
 
 
-	public movieVO(String rank, String title, String percent, String egg, String imgurl) {
+	public MovieVO(String rank, String title, String percent, String egg, String imgurl) {
 		this.rank = rank;
 		this.title = title;
 		this.percent = percent;
@@ -31,6 +31,9 @@ public class movieVO {
 		this.imgurl = imgurl;
 	}
 	
+
+
+
 
 
 	public String getRank() {
