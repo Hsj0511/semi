@@ -50,43 +50,22 @@ public class BoardController extends HttpServlet {
 
 		
 		
-		String boardWriter = request.getParameter("boardWriter");
-		String boardContent = request.getParameter("boardContent");
-		Timestamp boardDate = new Timestamp(System.currentTimeMillis());
+		String name = request.getParameter("name");
+		String content = request.getParameter("content");
+		
+		
 		BoardVO vo = new BoardVO();
-		System.out.println(boardDate);
+		
+		vo.setName(name);
+		int result = new BoardService().insertBoard(vo);
+		
+		if (result > 0 )
+		{
+			request.getRequestDispatcher(path)
+		}
+		System.out.println(postdate);
 
 
 	
-		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","MOVIE","MOVIE");
-			System.out.println("리뷰 디비 접속 성공!");
-			
-			
-			vo.setBoardWriter(boardWriter);
-			vo.setBoardContent(boardContent);
-		//	vo.setBoardDate(boardDate);
-		
-
-			
-			Statement stmt = conn.createStatement();
-			String sql =" insert into review1 (boardSeq, boardWriter, boardContent, boardDate)" +
-			           " values (review1_seq.nextval, '"+boardWriter+"','"+boardContent+"','"+boardDate+"') ";
-			
-			stmt.executeUpdate(sql);
-			
-			
-			System.out.println("리뷰 insert 성공");
-			conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			System.out.println("리뷰 디비 접속 실패");
-    	} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-	   } finally {
-		   response.sendRedirect(request.getContextPath()+ "/reviewPage1");
-	   }
-	}
 
 }

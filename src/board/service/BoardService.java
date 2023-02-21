@@ -9,4 +9,14 @@ import static movie.dao.DbDAO.*;
 public class BoardService {
 
 
+
+	public int insertBoard() {
+		int result = 0;
+		
+		
+		
+		return result;
+	}
+
+
 }
