@@ -1,6 +1,5 @@
 package board.VO;
 
-import java.sql.Date;
 
 public class BoardVO {
 /**
@@ -9,40 +8,37 @@ board_writer varchar2(15),
 board_content varchar2(1000),
 board_date date
  */
-	
-	private int boardNum;
-	private String boardWriter;
-	private String boardContent;
-	private Date boardDate;
-	
-	public int getBoardNum() {
-		return boardNum;
+
+
+	private int num;
+	private String name;
+	private String content;
+	private String postdate;
+	public int getNum() {
+		return num;
 	}
-	public void setBoardNum(int boardNum) {
-		this.boardNum = boardNum;
+	public void setNum(int num) {
+		this.num = num;
 	}
-	public String getBoardWriter() {
-		return boardWriter;
+	public String getName() {
+		return name;
 	}
-	public void setBoardWriter(String boardWriter) {
-		this.boardWriter = boardWriter;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getBoardContent() {
-		return boardContent;
+	public String getContent() {
+		return content;
 	}
-	public void setBoardContent(String boardContent) {
-		this.boardContent = boardContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public Date getBoardDate() {
-		return boardDate;
+	public String getPostdate() {
+		return postdate;
 	}
-	public void setBoardDate(Date boardDate) {
-		this.boardDate = boardDate;
-	}
-	@Override
-	public String toString() {
-		return "boardDAO [boardNum=" + boardNum + ", boardWriter=" + boardWriter + ", boardContent=" + boardContent
-				+ ", boardDate=" + boardDate + "]";
+	public void setPostdate(String postdate) {
+		this.postdate = postdate;
 	}
 
+	
+	
 }
