@@ -31,21 +31,45 @@
 
 %>
 
+<table>
+	<tr>
+		<th>랭킹</th>
+		<th>포스터</th>
+		<th>영화제목</th>
+		<th>예매율</th>
+		<th>에그지수</th>
+		
+	</tr>
 
+<tr>
 
 <%
 while(rs.next()) {
   if(rs.getString("RANK").equals("No.1")) {
 %>
-    <a href="http://localhost:8090/semi/reviewPage1.jsp"><img src="<%=rs.getString("IMGURL")%>"></a>
+
+	<tr>
+		<td><%=rs.getString("RANK") %></td>
+    	<td><a href="http://localhost:8090/semi/reviewPage1.jsp"><img src="<%=rs.getString("IMGURL")%>"  height="280" width="200"></a></td>
+    	<td><%=rs.getString("TITLE") %></td>
+		<td><%=rs.getString("PERCENT") %></td>
+		<td><%=rs.getString("EGG") %></td>
+	</tr>
 <%
   } else {
 %>
-    <img src="<%=rs.getString("IMGURL")%>">
+	<tr>
+		<td><%=rs.getString("RANK") %></td>
+	    <td><img src="<%=rs.getString("IMGURL")%>" height="280" width="200"></td>
+	    <td><%=rs.getString("TITLE") %></td>
+		<td><%=rs.getString("PERCENT") %></td>
+		<td><%=rs.getString("EGG") %></td>
+	</tr>
 <%
   }
 }
 %>
+
 
 
 </body>

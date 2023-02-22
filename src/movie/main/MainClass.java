@@ -16,7 +16,7 @@ public class MainClass {
 		
 	//	JDBCTemplate.UploadToDB(ML);
 		JDBCTemplate.DownloadToDB(ML);
-		System.out.println("ML : " + ML);
+	
 	}
 
 }

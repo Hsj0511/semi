@@ -14,7 +14,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <section>
 <%
 
@@ -37,7 +36,7 @@
 		
 	</tr>
 
-
+<tr>
 	<%
 	while(rs.next()) {
 	%>
@@ -49,11 +48,11 @@
 		<td><%=rs.getString("TITLE") %></td>
 		<td><%=rs.getString("PERCENT") %></td>
 		<td><%=rs.getString("EGG") %></td>
-	</tr>
 		<%
 			}
 		%>
 
+	</tr>
 
 
 
