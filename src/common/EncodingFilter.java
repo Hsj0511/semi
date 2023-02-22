@@ -1,4 +1,4 @@
-package common.filter;
+package common;
 
 import java.io.IOException;
 
@@ -21,4 +21,7 @@ public class EncodingFilter implements Filter{
 		
 	}
 
+
+
 }
+

@@ -2,8 +2,8 @@ package movie.main;
 
 import java.util.ArrayList;
 
+import common.JDBCTemplate;
 import movie.crawling.crawlingClass;
-import movie.dao.DbDAO;
 import movie.vo.MovieVO;
 
 
@@ -14,8 +14,8 @@ public class MainClass {
 		ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
 		crawlingClass.Crawling(ML);
 		
-		DbDAO.UploadToDB(ML);
-		DbDAO.DownloadToDB(ML);
+		JDBCTemplate.UploadToDB(ML);
+		JDBCTemplate.DownloadToDB(ML);
 	}
 
 }

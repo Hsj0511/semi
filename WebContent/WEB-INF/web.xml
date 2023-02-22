@@ -17,7 +17,7 @@
     
   <filter>
       <filter-name>EncodingFilter</filter-name>
-      <filter-class>common.filter.EncodingFilter</filter-class>
+      <filter-class>common.EncodingFilter</filter-class>
   </filter>
   <filter-mapping>
       <filter-name>EncodingFilter</filter-name>

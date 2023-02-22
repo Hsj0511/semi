@@ -52,7 +52,7 @@ public class BoardController extends HttpServlet {
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
 		
-		System.out.println("컨트롤러" + name + content);
+		System.out.println( name +" ///" + content);
 		
 		BoardVO vo = new BoardVO();
 		

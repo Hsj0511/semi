@@ -1,4 +1,4 @@
-package movie.dao;
+package common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import movie.vo.MovieVO;
 
-public class DbDAO {
+public class JDBCTemplate {
 
 	public static Connection getConnection() {
 
