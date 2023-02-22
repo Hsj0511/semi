@@ -23,15 +23,14 @@
 <style>
 
 div{
-border-style: double;
- border-color: red;
-height: 80px;
-font-size: 40px;
-font-family: monospace;
-font-weight: bold;
-text-align:center;
-line-height: 80px;
-padding: 20px;
+  border-radius: 40px;
+  border: solid 1px gray;
+  width: auto;
+  height: 140px;
+  font-size: 40px;
+  text-align:center;
+  line-height: 100px;
+  height: 80px;
 }
 
  tbody td:nth-child(1) {
@@ -54,12 +53,14 @@ padding: 20px;
  tr { 
   display: block; float: left; 
   padding: 20px;
+   
   
   
  }
-th, td { 
+td { 
 	display: block; 
 	padding: 8px;
+
 }
 
 
@@ -116,7 +117,7 @@ while(rs.next()) {
   if(rs.getString("RANK").equals("No.1")) {
 %>
 
-	<tr>
+	<tr >
 		<td class="rank"><%=rs.getString("RANK") %></td>
     	<td><a href="http://localhost:8090/semi/reviewPage1.jsp"><img src="<%=rs.getString("IMGURL")%>"  height="280" width="200"></a></td>
     	<td class="title"><%=rs.getString("TITLE") %></td>
