@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86796/86796_320.jpg" alt="No.1" />
+
 <section>
 <%
 
@@ -19,33 +19,39 @@ Class.forName("oracle.jdbc.OracleDriver");
 
 Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
 
-String sql = "select imgurl from movieinfo";
+String sql = "select * from movieinfo";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 ResultSet rs = pstmt.executeQuery(sql);
 
 %>
-
 <table>
 	<tr>
-		<th>글번호</th>
-
+		<th>랭킹</th>
+		<th>포스터</th>
+		<th>영화제목</th>
+		<th>예매율</th>
+		<th>에그지수</th>
+		
 	</tr>
+
+
 	<%
 	while(rs.next()) {
 	%>
 
 	<tr>
-
+		<td><%=rs.getString("RANK") %></td>
 		<td><img src="<%=rs.getString("IMGURL") %>"></td>
-
-	
+		<td><%=rs.getString("TITLE") %></td>
+		<td><%=rs.getString("PERCENT") %></td>
+		<td><%=rs.getString("EGG") %></td>
 	</tr>
 		<%
 			}
 		%>
 
 
-</table>
+
 
 
 </section>
