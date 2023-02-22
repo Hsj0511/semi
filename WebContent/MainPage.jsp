@@ -114,7 +114,7 @@ table, td, th {
 
 <%
 while(rs.next()) {
-  if(rs.getString("RANK").equals("No.1")) {
+  if(rs.getString("title").equals("앤트맨과 와스프-퀀텀매니아")) {
 %>
 
 	<tr >
