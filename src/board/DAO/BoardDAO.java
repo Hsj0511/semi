@@ -19,7 +19,7 @@ public class BoardDAO {
 	public int insertData(Connection conn, BoardVO vo) {
 		int result = -1;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		
 		String sql = "insert into review1 values ((select nvl(max(NUM+1),1) from review1),?,?)";
 	
 		try {
