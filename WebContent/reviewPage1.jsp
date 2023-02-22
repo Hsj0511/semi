@@ -15,10 +15,10 @@
 
 <div class="insertData">
 	<form action="reviewPage1" method="post" name="insert_Data">
-		닉네임: <input type="text" name="boardWriter">
+		닉네임: <input type="text" name="name">
 	<br>
 	    
-		리뷰를 남겨주세요: <input type="text" name="boardContent">
+		리뷰를 남겨주세요: <input type="text" name="content">
 	<br>
 
 	    <button type="submit">등록하기</button>

@@ -45,7 +45,6 @@ public class BoardController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("영화1 리뷰 포스트");
 		
 
 		
@@ -53,19 +52,25 @@ public class BoardController extends HttpServlet {
 		String name = request.getParameter("name");
 		String content = request.getParameter("content");
 		
+		System.out.println("컨트롤러" + name + content);
 		
 		BoardVO vo = new BoardVO();
 		
 		vo.setName(name);
-		int result = new BoardService().insertBoard(vo);
+		vo.setContent(content);
 		
-		if (result > 0 )
-		{
-			request.getRequestDispatcher(path)
-		}
-		System.out.println(postdate);
-
+		
+		
+		int result = new BoardService().insertBoard(vo);
+	     if(result < 1) {
+      	   System.out.println("db가기 실패");
+         } else {
+      	   System.out.println("db가기 성공");
+      	   response.sendRedirect(request.getContextPath()+ "/reviewPage1.jsp");
+         }
+         
+		
 
 	
-
+	}
 }

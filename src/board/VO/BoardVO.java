@@ -13,7 +13,7 @@ board_date date
 	private int num;
 	private String name;
 	private String content;
-	private String postdate;
+	
 	public int getNum() {
 		return num;
 	}
@@ -29,15 +29,15 @@ board_date date
 	public String getContent() {
 		return content;
 	}
+	@Override
+	public String toString() {
+		return "BoardVO [num=" + num + ", name=" + name + ", content=" + content + "]";
+	}
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getPostdate() {
-		return postdate;
-	}
-	public void setPostdate(String postdate) {
-		this.postdate = postdate;
-	}
+
+	
 
 	
 	
