@@ -68,6 +68,7 @@ public class JDBCTemplate {
 
 	}
 
+	
 	public static void DownloadToDB(ArrayList<MovieVO> ML) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
@@ -133,6 +134,8 @@ public class JDBCTemplate {
 		}
 	}
 
+	
+	
 	// commit
 	public static void commit(Connection conn) {
 		try {

@@ -5,13 +5,11 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link href ="<%=request.getContextPath() %>/resources/css/reset.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
 <title>1번영화 리뷰 페이지</title>
 </head>
@@ -33,20 +31,16 @@
 	</form>
 </div>
 
-
-
-
-
 <section>
 <%
 
-Class.forName("oracle.jdbc.OracleDriver");
-
-Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
-
-String sql = "select * from review1" ;
-PreparedStatement pstmt = conn.prepareStatement(sql);
-ResultSet rs = pstmt.executeQuery(sql);
+	Class.forName("oracle.jdbc.OracleDriver");
+	
+	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
+	
+	String sql = "select * from review1" ;
+	PreparedStatement pstmt = conn.prepareStatement(sql);
+	ResultSet rs = pstmt.executeQuery(sql);
 
 %>
 
