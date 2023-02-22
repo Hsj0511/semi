@@ -124,6 +124,18 @@ while(rs.next()) {
 		<td class="egg">에그지수 <%=rs.getString("EGG") %></td>
 		<td class="percent">예매율 <%=rs.getString("PERCENT") %></td>
 	</tr>
+
+
+<%
+  } else if(rs.getString("title").equals("서치 2")) {
+	%>
+	<tr >
+		<td class="rank"><%=rs.getString("RANK") %></td>
+    	<td><a href="http://localhost:8090/semi/reviewPage2.jsp"><img src="<%=rs.getString("IMGURL")%>"  height="280" width="200"></a></td>
+    	<td class="title"><%=rs.getString("TITLE") %></td>
+		<td class="egg">에그지수 <%=rs.getString("EGG") %></td>
+		<td class="percent">예매율 <%=rs.getString("PERCENT") %></td>
+	</tr>
 <%
   } else {
 %>
