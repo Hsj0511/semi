@@ -25,7 +25,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 
-<title>앤트맨 리뷰 페이지</title>
+<title>서치 2 리뷰 페이지</title>
 
 
 <style type="text/css">
@@ -50,19 +50,19 @@ body {
 </style>
 </head>
 <body>
-<button type="button" onclick="location.href='/semi/MainPage.jsp'">뒤로가기</button>
+<button type="button" onclick="location.href='/semi/MainPage.jsp'">홈으로 가기</button>
 
 
 
 <nav class="navbar fixed-top bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">홈으로 가기</a>
+    <a class="navbar-brand" href="#">리뷰 등록</a>
   </div>
 </nav>
 
 
 <div class="img" style="text-align : center;">
-<img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86796/86796_320.jpg" height="700">
+<img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86770/86770_320.jpg" height="700">
 </div>
 
 <link href="/resources/css/MainCss.css" >
@@ -72,7 +72,7 @@ body {
 	
 	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
 	
-	String sql = "select * from review1  order by num desc" ;
+	String sql = "select * from review2 order by num desc";
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery(sql);
 %>
@@ -81,7 +81,7 @@ body {
 
 
 <div class="mb-3">
-<form action="reviewPage1" method="post" name="insert_Data">
+<form action="reviewPage2" method="post" name="insert_Data">
   <label for="exampleFormControlInput1" class="form-label">닉네임</label>
   <input type="text" class="form-control" name="name" placeholder="닉네임">
 </div>

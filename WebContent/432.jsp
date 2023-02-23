@@ -90,7 +90,7 @@ width:150px;
 	
 	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
 	
-	String sql = "select * from review2" ;
+	String sql = "select * from review2 order by num desc" ;
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery(sql);
 %>
