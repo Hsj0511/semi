@@ -14,7 +14,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>앤트맨 리뷰 페이지</title>
+<title>서치 리뷰 페이지</title>
 
 
 <style type="text/css">
@@ -82,7 +82,7 @@ width:150px;
 </div>
 
 <div class="img" style="text-align : center;">
-<img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86796/86796_320.jpg" height="700">
+<img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86770/86770_320.jpg" height="700">
 </div>
 
 <%
@@ -90,7 +90,7 @@ width:150px;
 	
 	Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "MOVIE", "MOVIE");
 	
-	String sql = "select * from review1" ;
+	String sql = "select * from review2" ;
 	PreparedStatement pstmt = conn.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery(sql);
 %>
@@ -100,7 +100,7 @@ width:150px;
 
 
 <div class="insertData">
-	<form action="reviewPage1" method="post" name="insert_Data">
+	<form action="reviewPage2" method="post" name="insert_Data">
 		 <input type="text" placeholder="닉네임" name="name">
 	<br>
 	    
