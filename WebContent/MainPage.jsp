@@ -11,8 +11,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"  href="${pageContext.request.contextPath}/src/style/MainCss.css">
-<link rel="stylesheet"  href="<%=request.getContextPath() %>../css/MainCss.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 제이쿼리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
@@ -68,13 +78,13 @@ table {
 font-family: monospace;
 font-weight: bold;
 margin-left:auto; 
- margin-right:auto;
  padding: 20px;
 }
-table, td, th {
-    border-collapse : collapse;
-};
 
+
+body {
+	margin: 80px;
+}
 </style>
 
 
@@ -86,11 +96,13 @@ table, td, th {
 </head>
 <body>
 
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">   예매율 순으로 보기</span>
+  </div>
+</nav>
 
-<div>
-
- 예매율 순으로 보기
-</div>
 
 <%
 
@@ -114,7 +126,7 @@ table, td, th {
 
 <%
 while(rs.next()) {
-  if(rs.getString("title").equals("앤트맨과 와스프-퀀텀매니아")) {
+  if(rs.getString("rank").equals("No.1")) {
 %>
 
 	<tr >
@@ -127,7 +139,7 @@ while(rs.next()) {
 
 
 <%
-  } else if(rs.getString("title").equals("서치 2")) {
+  } else if(rs.getString("rank").equals("No.2")) {
 	%>
 	<tr >
 		<td class="rank"><%=rs.getString("RANK") %></td>

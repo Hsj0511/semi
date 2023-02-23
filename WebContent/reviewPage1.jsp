@@ -50,13 +50,11 @@ body {
 </style>
 </head>
 <body>
-<button type="button" onclick="location.href='/semi/MainPage.jsp'">뒤로가기</button>
-
 
 
 <nav class="navbar fixed-top bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">홈으로 가기</a>
+    <a class="navbar-brand" href="/semi/MainPage.jsp">홈으로 가기</a>
   </div>
 </nav>
 
