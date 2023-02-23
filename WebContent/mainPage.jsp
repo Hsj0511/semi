@@ -47,8 +47,14 @@ ResultSet rs = pstmt.executeQuery(sql);
 		<td><%=rs.getString("EGG") %></td>
 	</tr>
 		<%
-			}
+		if(rs.getString("RANK") == "No.1") {
+
+			%>
+			<%out.print("클릭됨");
+		} 	}
 		%>
+	
+	
 
 
 
