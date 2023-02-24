@@ -18,3 +18,6 @@ CGV홈페이지를 크롤링하여 영화 정보를 가져오고, 리뷰를 작�
 *Database: Oracle DB(11xe)
 *sqldeveloper 17.2.0
 *bootstrap 5.2.3
+
+
+<img src="C:\Users\user1\Pictures\Saved Pictures\semi-1.jpg" width="450px" height="300px"  alt="RubberDuck"></img><br/>
