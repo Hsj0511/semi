@@ -15,10 +15,10 @@ public class MainClass {
 	public static void main(String[] args) {
 		ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
 
-		crawlingClass.Crawling(ML);
+	//	crawlingClass.Crawling(ML);
 		
-	//	JDBCTemplate.UploadToDB(ML);
-	//	JDBCTemplate.DownloadToDB(ML);
+		JDBCTemplate.UploadToDB(ML);
+		JDBCTemplate.DownloadToDB(ML);
 	
 	}
 
