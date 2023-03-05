@@ -13,12 +13,9 @@ import movie.vo.MovieVO;
 public class MainClass {
 
 	public static void main(String[] args) {
-	//	ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
-		ArrayList<CarVo> CL = new ArrayList<CarVo>();
+		ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
 
-		crawlingCar.Crawling(CL);
-		
-		//	crawlingClass.Crawling(ML);
+		crawlingClass.Crawling(ML);
 		
 	//	JDBCTemplate.UploadToDB(ML);
 	//	JDBCTemplate.DownloadToDB(ML);
