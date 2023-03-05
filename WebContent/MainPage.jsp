@@ -7,15 +7,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+
 <!DOCTYPE html>
 <html>
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<head>
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 <!-- 제이쿼리 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,27 +25,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>영화 리뷰 모아</title>
 
 
 
 
 
 <style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 
-div{
-  border-radius: 40px;
-  border: solid 1px gray;
-  width: auto;
-  height: 140px;
-  font-size: 40px;
-  text-align:center;
-  line-height: 100px;
-  height: 80px;
+h1{
+     font-family: 'Nanum Pen Script', cursive;
 }
 
  tbody td:nth-child(1) {
-    background-color:red;
+    background-color:orangered;
     color: white;
     font-size: 20px;
     text-align:center;
@@ -63,9 +58,6 @@ div{
  tr { 
   display: block; float: left; 
   padding: 20px;
-   
-  
-  
  }
 td { 
 	display: block; 
@@ -75,7 +67,6 @@ td {
 
 
 table {
-font-family: monospace;
 font-weight: bold;
 margin-left:auto; 
  padding: 20px;
@@ -85,25 +76,33 @@ margin-left:auto;
 body {
 	margin: 80px;
 }
+
+
 </style>
 
-
-
-
-
-
-
 </head>
+
+
+
 <body>
 
-<!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
+<div class="logo" style=height:70px;>
+<hr>
+
+<nav class="navbar" style="background-color: #FFE4E1;">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">   예매율 순으로 보기</span>
+    <a class="navbar-brand" href="#">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-boombox-fill" viewBox="0 0 16 16">
+  <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v2H0V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0ZM2 3.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm7.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0ZM9.5 3h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1ZM6 10.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm7 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm.5-1.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+  <path d="M0 6h16v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V6Zm2 4.5a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Zm7 0a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"/>
+</svg>
+     영화 리뷰 모아
+    </a>
   </div>
 </nav>
+</div>
 
-
+<hr>
 <%
 
 	Class.forName("oracle.jdbc.OracleDriver");

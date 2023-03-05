@@ -30,8 +30,8 @@ public class crawlingClass {
 		e.printStackTrace();
 	}
 
-		Elements ranks = doc.select("div.box-image strong.rank");
-		Elements titles = doc.select("div.box-contents strong.title");
+		Elements ranks = doc.select("div.box-image >strong.rank");
+		Elements titles = doc.select("div.box-contents >strong.title");
 		Elements percents = doc.select("div.box-contents > div.score > strong.percent > span");
 		Elements eggs = doc.select("div.box-contents > div.score > div.egg-gage.small > span.percent");
 		Elements imgs= doc.select("div.box-image ").tagName("img");

@@ -3,7 +3,9 @@ package movie.main;
 import java.util.ArrayList;
 
 import common.JDBCTemplate;
+import movie.crawling.crawlingCar;
 import movie.crawling.crawlingClass;
+import movie.vo.CarVo;
 import movie.vo.MovieVO;
 
 
@@ -11,11 +13,15 @@ import movie.vo.MovieVO;
 public class MainClass {
 
 	public static void main(String[] args) {
-		ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
-	//	crawlingClass.Crawling(ML);
+	//	ArrayList<MovieVO> ML = new ArrayList<MovieVO>();
+		ArrayList<CarVo> CL = new ArrayList<CarVo>();
+
+		crawlingCar.Crawling(CL);
+		
+		//	crawlingClass.Crawling(ML);
 		
 	//	JDBCTemplate.UploadToDB(ML);
-		JDBCTemplate.DownloadToDB(ML);
+	//	JDBCTemplate.DownloadToDB(ML);
 	
 	}
 
